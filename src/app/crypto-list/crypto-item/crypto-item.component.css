@@ -1,0 +1,38 @@
+.crypto-item {
+    border-bottom: 1px solid lightgrey;
+    padding: 25px;
+    width: 100%;
+}
+
+.crypto-logo {
+    height: 64px;
+    width: 64px;
+    margin: auto 16px;
+}
+
+.crypto-details .name {
+    font-weight: bold;
+}
+
+.crypto-details .symbol {
+    font-weight: normal;
+    font-size: 16px;
+    font-style: italic;
+}
+
+.crypto-price .value {
+    font-size: 18px;
+    font-weight: bold;
+}
+
+.crypto-price .increase {
+    color: green;
+    font-size: 14px;
+    float: right;
+}
+
+.crypto-price .decrease {
+    color: red;
+    font-size: 14px;
+    float: right;
+}

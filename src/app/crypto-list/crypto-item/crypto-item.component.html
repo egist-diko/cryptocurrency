@@ -1,31 +1,38 @@
-<div class="list-group-item clearfix"
-    appItem
-    [editable]="editPressed"
+<div class="row no-gutters crypto-item" 
+    appItem [editable]="editPressed" 
     (click)="onClick(CCel)">
-    <span class="float-left">
-    <img
-    [src]="CCel.imageURL"
-    alt="{{ CCel.name }}"
-    class="img-responsive rounded-circle"
-    style="max-height: 50px;">
-    </span>
-        <div class="float-left">
-            <h4 class="list-group-item-heading">{{ CCel.name }}</h4>
-            <p class="list-group-item-text">{{ CCel.symbol }}</p>
+    <div class="my-auto">
+        <img class="crypto-logo" [src]="CCel.imageURL" 
+        alt="{{ CCel.name }}" >
         </div>
-        <div class="float-right">
-            <div
-            class="list-group-item-heading"
-            >${{ CCel.price_usd }}</div>
-            <div class="list-group-item-text row"
-            Color
-            [condition]="conditioN">
-            <div *ngIf="conditioN; else elseBlock"><svg width="1em" height="1em" viewBox="0 0 16 16" class="bi bi-arrow-down-left" fill="currentColor" xmlns="http://www.w3.org/2000/svg">
-                <path fill-rule="evenodd" d="M2 13.5a.5.5 0 0 0 .5.5h6a.5.5 0 0 0 0-1H3.707L13.854 2.854a.5.5 0 0 0-.708-.708L3 12.293V7.5a.5.5 0 0 0-1 0v6z"/>
-            </svg></div>
-            <ng-template #elseBlock><svg width="1em" height="1em" viewBox="0 0 16 16" class="bi bi-arrow-up-left" fill="currentColor" xmlns="http://www.w3.org/2000/svg">
-                <path fill-rule="evenodd" d="M2 2.5a.5.5 0 0 1 .5-.5h6a.5.5 0 0 1 0 1H3.707l10.147 10.146a.5.5 0 0 1-.708.708L3 3.707V8.5a.5.5 0 0 1-1 0v-6z"/>
-              </svg></ng-template>
-            {{ CCel.percent_change_usd_last_24_hours }}%</div>
+    <div class="my-auto crypto-details">
+        <div class="name">
+            {{ CCel.name }}
         </div>
- </div>
+        <div class="symbol">
+            {{ CCel.symbol }}
+        </div>
+    </div>
+    <div class="my-auto crypto-price ml-auto mr-1">
+        <div class="value">
+            ${{ CCel.price_usd }}
+        </div>
+        <div Color [condition]="conditioN">
+            <div class="float-left" *ngIf="conditioN; else elseBlock">
+                <svg width="1em" height="1em" viewBox="0 0 16 16"
+                    class="bi bi-arrow-down-left" fill="currentColor" xmlns="http://www.w3.org/2000/svg">
+                    <path fill-rule="evenodd"
+                        d="M2 13.5a.5.5 0 0 0 .5.5h6a.5.5 0 0 0 0-1H3.707L13.854 2.854a.5.5 0 0 0-.708-.708L3 12.293V7.5a.5.5 0 0 0-1 0v6z" />
+                </svg>
+            </div>
+            <ng-template #elseBlock>
+                <svg width="1em" height="1em" viewBox="0 0 16 16" class="bi bi-arrow-up-left"
+                    fill="currentColor" xmlns="http://www.w3.org/2000/svg">
+                    <path fill-rule="evenodd"
+                        d="M2 2.5a.5.5 0 0 1 .5-.5h6a.5.5 0 0 1 0 1H3.707l10.147 10.146a.5.5 0 0 1-.708.708L3 3.707V8.5a.5.5 0 0 1-1 0v-6z" />
+                </svg>
+            </ng-template>
+            {{ CCel.percent_change_usd_last_24_hours}}%
+        </div>
+    </div>
+</div>

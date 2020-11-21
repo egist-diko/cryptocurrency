@@ -1,27 +1,34 @@
-# Cryptocurrency
+# CryptoTracer
 
 This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 10.1.0.
+
+## How to get app running
+
+After downloading the app folder simply open it and git-bash there. Before going to the development server you need to run the `npm install` and after that the `ng update` commands. 
 
 ## Development server
 
 Run `ng serve` for a dev server. Navigate to `http://localhost:4200/`. The app will automatically reload if you change any of the source files.
 
-## Code scaffolding
+## Using the CryptoTracer app
 
-Run `ng generate component component-name` to generate a new component. You can also use `ng generate directive|pipe|service|class|guard|interface|enum|module`.
+When the app is successfully loaded you can start using it. There will be the _Bitcoin_ Crypto-Currency by default when the app starts. 
 
-## Build
+### Adding a Cryptocurrency
 
-Run `ng build` to build the project. The build artifacts will be stored in the `dist/` directory. Use the `--prod` flag for a production build.
+To add a cryptocurrency, write the symbol in the input field and press the *Add* button.
+> You cannot add a cryptocurrency twice
 
-## Running unit tests
+### Deleting
 
-Run `ng test` to execute the unit tests via [Karma](https://karma-runner.github.io).
+To delete a cryptocurrency, click the cryptocurrency from the list.
 
-## Running end-to-end tests
+When selected, you can see that it's colored as red.
 
-Run `ng e2e` to execute the end-to-end tests via [Protractor](http://www.protractortest.org/).
+You can select as many cryptocurrencies as you like , all red colored items will be deleted after pressing the delete button.
 
-## Further help
+### Real-time data updating
 
-To get more help on the Angular CLI use `ng help` or go check out the [Angular CLI README](https://github.com/angular/angular-cli/blob/master/README.md).
+Every 5 seconds you can see value changes to the usd price and percentage. This change is done without reloading the page.
+
+

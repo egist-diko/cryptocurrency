@@ -1,0 +1,9 @@
+.crypto-button {
+    width: 100px;
+    margin: 10px;
+}
+#edit{
+    padding-top: 32px;
+    max-width: 250px;
+    display: inline-block;
+}

@@ -9,7 +9,16 @@ export class CryptoCurrency {
         this.name = name;
         this.symbol = symbol;
         this.imageURL = imageURL;
-        this.price_usd= price_usd;
-        this.percent_change_usd_last_24_hours = percent_change_usd_last_24_hours;
+        this.setPrice(price_usd);
+        this.setPercentage(percent_change_usd_last_24_hours);
+    }
+
+    setPrice(price: number)
+    {
+        this.price_usd = parseFloat(price.toFixed(3));
+    }
+
+    setPercentage(percentage: number){
+        this.percent_change_usd_last_24_hours = parseFloat(percentage.toFixed(4));
     }
 }

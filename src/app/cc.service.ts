@@ -45,13 +45,8 @@ export class CryptoCurrencyService{
     updateCCList(){
         this.CCList.forEach(item =>{
             this.getACrypto(item.name).subscribe(data =>{
-                console.log(item.name);
-                console.log(data.data.market_data.price_usd);
-                console.log(data.data.market_data.percent_change_usd_last_24_hours);
-                const valueusd = data.data.market_data.price_usd;
-                const valueper = data.data.market_data.percent_change_usd_last_24_hours;
-                item.price_usd=valueusd;
-                item.percent_change_usd_last_24_hours=valueper;
+                item.setPercentage(data.data.market_data.percent_change_usd_last_24_hours);
+                item.setPrice(data.data.market_data.price_usd);
             })
         })
         this.CCChanges.next(this.CCList.slice());
